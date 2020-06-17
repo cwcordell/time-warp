@@ -1,0 +1,245 @@
+:root{
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body {
+    font-family: "Segoe UI",Arial,sans-serif;
+    margin: auto;
+    background-color: rgb(233, 233, 233);
+    box-sizing: border-box;
+    font-size: 16px;
+    min-width: 900px;
+    max-width: 1500px;
+}
+
+select{
+    font-size: 1em;
+    height: 2em;
+    width: 100%;
+    border-radius: 0;
+    outline: none;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 1em;
+    padding: .7em;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-title {
+    font-size: 1.5em;
+}
+
+.header {
+    color: white;
+    text-align: center;
+}
+
+.header-title{
+    font-size: 2em;
+}
+
+.cameleon {
+    -webkit-animation-name: cameleon;  
+    -webkit-animation-iteration-count: infinite;  
+    -webkit-animation-duration: 12s; 
+    animation-name: cameleon;
+    animation-iteration-count: infinite;  
+    animation-duration: 12s; 
+}
+  
+@-webkit-keyframes cameleon {
+    0% { background-color: red; }
+    15% { background-color: orange; }
+    35% { background-color: rgb(211, 235, 0); }
+    55% { background-color: rgb(0, 255, 42); }
+    75% { background-color: rgb(0, 81, 255); }
+    95% { background-color: rgb(128, 0, 107); }
+    100% { background-color: rgb(255, 0, 34); }
+}
+
+@keyframes cameleon {
+    0% { background-color: red; }
+    15% { background-color: orange; }
+    35% { background-color: rgb(211, 235, 0); }
+    55% { background-color: rgb(0, 255, 42); }
+    75% { background-color: rgb(0, 81, 255); }
+    95% { background-color: rgb(128, 0, 107); }
+    100% { background-color: rgb(255, 0, 34); }
+}
+
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: lightgrey;
+    outline: none;
+    opacity: 0.75;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+
+    -webkit-animation-name: cameleon;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 12s;
+    animation-name: cameleon;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+}
+
+.slider:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 50%;
+    background: rgb(151, 151, 151);
+    border: 1px solid rgb(44, 44, 44);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: rgb(151, 151, 151);
+    border: 1px solid rgb(44, 44, 44);
+    cursor: pointer;
+}
+
+.slider:disabled {
+    cursor: not-allowed;
+}
+
+.settingContainer{
+    display: flex;
+    margin-top: 1em;
+    align-items: center;
+}
+
+.settings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+}
+
+.settingLabel{
+    font-size: 1.2em;
+    min-width: 110px;
+    width: 110px;
+}
+
+.submitButton {
+    margin-top: 1em;
+    color: white;
+    font-size: 1.3em;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.hidden{
+    display: none;
+}
+
+.disabled{
+    cursor: not-allowed;
+}
+
+#nextRequest{
+    margin-left: 1%;
+    width: 100%;
+}
+
+#delaySliderSettingLabel {
+    width: 110px;
+}
+
+#intervalSliderSettingLabel {
+    width: 155px;
+}
+
+#serverSettings, #clientSettings{
+    margin: 1%;
+}
+
+#history{
+    margin-top: 2em;
+}
+
+.historyRow {
+    padding-top: .2em;
+    display: flex;
+    text-align:left;
+    box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);
+}
+
+.historyRowHeader{
+  font-weight: bold;
+}
+
+.statusBar{
+    width: .5em;
+    height: 3em;
+    margin: 0 1px;
+}
+
+.statusBarSlow {
+    background-color: orange;
+}
+
+.statusBarError {
+    background-color: red;
+}
+
+.statusBarSuccess {
+    background-color: green;
+}
+
+.sentOnColumn{
+    padding: 1em;
+    width: 60px;
+    text-align:left;
+}
+
+.receivedOnColumn{
+    padding: 1em;
+    width: 80px;
+}
+
+.delayedColumn{
+    padding: 1em;
+    width: 50px;
+}
+
+.tripTimeColumn{
+    padding: 1em;
+    width: 80px;
+}
+
+.withErrorsColumn{
+    padding: 1em;
+    width: 110px;
+}
+
+.messageColumn{
+    padding: 1em;
+}
+ 
+ 

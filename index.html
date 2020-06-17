@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Time Warp</title>
+  <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+  <div class="main">
+    <div class="header cameleon card">
+      <div class="header-title">Time Warp</div>
+    </div>
+
+  <div class="card">
+    <div class="settings">
+      <div id="serverSettings">
+        <div class="card-title">Server Settings</div>
+        <hr />
+        <div class="settingContainer">
+          <label class="settingLabel" id="delaySliderSettingLabel">Delay: <span id="delaySelectedOutput"></span>s</label>
+          <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="0" class="slider" id="delaySlider">
+          </div>
+        </div>
+        <div class="settingContainer">
+          <label class="settingLabel" for="serverErrors">Force Error:</label>
+          <select name="serverErrors" id="serverErrors">
+            <option value="none">None</option>
+            <option value="badRequest">Bad Request</option>
+            <option value="internalServer">Internal Server Error</option>
+            <option value="unauthorized">Unauthorized</option>
+            <option value="random">Random - None, Bad Request, Internal Server Error, or Unauthorized</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="clientSettings">
+        <div class="card-title">Client Settings</div>
+        <hr />
+        <div class="settingContainer">
+          <div class="settingLabel" id="intervalSliderSettingLabel">Interval: <span id="intervalSelectedOutput"></span>s</div>
+          <div class="slidecontainer">
+            <input type="range" min="0" max="10" value="0" class="slider" id="intervalSlider">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="submitButton" class="cameleon submitButton">Make it so!</div>
+    <div id="stopIntervalButton" class="cameleon submitButton hidden">Stop Interval</div>
+  </div>
+
+    <div class="card" id="history" >
+      <div class="card-title">History</div>
+      <hr />
+      <div class="historyRow historyRowHeader">
+        <div class="statusBar statusBarUndefined"></div>
+        <div class="sentOnColumn">Sent</div>
+        <div class="receivedOnColumn">Received</div>
+        <div class="delayedColumn">Delay</div>
+        <div class="tripTimeColumn">Trip Time</div>
+        <div class="withErrorsColumn">Forced Error</div>
+        <div class="messageColumn">Server Response</div>
+      </div>
+
+      <div id="historyRows"></div>
+    </div>
+
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
