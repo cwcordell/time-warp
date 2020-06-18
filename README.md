@@ -14,12 +14,30 @@ This method requires that the Go CLI be installed on the machine in which to run
     go run main.go
 ```
 
+Optionally, the port can be changed by setting an environment variable named "PORT" and the value desired.
+
+``` shell
+    PORT=8999 go run main.go
+```
+
 ### Binary and Static Upload to Server
 
 [Build the binary](#Building-the-Binary)) and then upload the binary and the static directory to the server.
 
 ``` shell
     go build main.go
+```
+
+Run the application with:
+
+``` shell
+    ./timewarp
+```
+
+Optionally, the port can be changed by setting an environment variable named "PORT" and the value desired.
+
+``` shell
+    PORT=8999 ./timewarp
 ```
 
 ### Docker
