@@ -7,19 +7,23 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 	"time"
 )
-
-const httpPort int = 8000
 
 var requestCount = 0
 
 func main() {
+	httpPort := os.Getenv("PORT")
+	if httpPort == "" {
+		httpPort = "8000"
+		log.Printf("Defaulting to port %s", httpPort)
+	}
 	http.HandleFunc("/time", timeHandler)
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/", fs)
-	log.Printf("Starting server on port %d\n", httpPort)
-	err := http.ListenAndServe(fmt.Sprintf(":%d", httpPort), logRequest(http.DefaultServeMux))
+	log.Printf("Starting server on port %s\n", httpPort)
+	err := http.ListenAndServe(":"+httpPort, logRequest(http.DefaultServeMux))
 	if err != nil {
 		log.Fatal(err)
 	}
