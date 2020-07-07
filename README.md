@@ -69,3 +69,4 @@ The docker image can be built if desired in lieu of using the Docker Image at [c
 ``` shell
 docker build -t timewarp .
 ```
+cd trace/cloud-trace-demo-app && ./setup.sh
