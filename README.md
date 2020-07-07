@@ -69,4 +69,15 @@ The docker image can be built if desired in lieu of using the Docker Image at [c
 ``` shell
 docker build -t timewarp .
 ```
-cd trace/cloud-trace-demo-app && ./setup.sh
+
+## Deployment
+
+### Kubernetes
+
+Timewarp can be deployed to Kubernetes using the proviced YAML manafest files located at ./k8s.Run the following command to create the deployment and service objects:
+
+``` shell
+kubectl apply -f k8s
+```
+
+The deployment and service parameters can be changed to suite your needs. Refer to the Kubernetes documentation for more information.
