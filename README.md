@@ -79,5 +79,47 @@ Timewarp can be deployed to Kubernetes using the proviced YAML manafest files lo
 ``` shell
 kubectl apply -f k8s
 ```
+The deployment can also be made without the yaml files with the following command:
+
+```shell
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Service
+metadata:
+  name: timewarp
+  labels:
+    app: timewarp
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: timewarp
+  type: LoadBalancer
+  ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timewarp
+  labels:
+    app: timewarp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timewarp
+  template:
+    metadata:
+      labels:
+        app: timewarp
+    spec:
+      containers:
+      - name: timewarp
+        image: cordelltech/timewarp
+        ports:
+        - containerPort: 8000
+          name: http
+```
 
 The deployment and service parameters can be changed to suite your needs. Refer to the Kubernetes documentation for more information.
