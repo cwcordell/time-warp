@@ -97,7 +97,7 @@ spec:
   selector:
     app: timewarp
   type: LoadBalancer
-  ---
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -120,6 +120,7 @@ spec:
         ports:
         - containerPort: 8000
           name: http
+EOF
 ```
 
 The deployment and service parameters can be changed to suite your needs. Refer to the Kubernetes documentation for more information.
